@@ -24,7 +24,7 @@
       width: 400px;
       height: 500px;
       max-height: 600px;
-      display: none;
+      display: none; /* Changed from none to flex to allow for initial message setup, though it will be set back to none immediately unless opened. Better to keep it 'none' and set to 'flex' in the click handler. Reverting this comment. */
       flex-direction: column;
       background: #ffffff;
       border-radius: 16px;
@@ -135,12 +135,31 @@
   `;
   document.body.appendChild(chatContainer);
 
+  // --- Thêm biến cờ để kiểm tra xem tin nhắn chào đã gửi chưa ---
+  let greetingSent = false;
+
   chatBtn.onclick = () => {
     chatContainer.style.display = 'flex';
+
+    // --- Thêm đoạn code gửi tin nhắn chào ở đây ---
+    const msgBox = document.getElementById('n8n-chat-messages');
+    // Kiểm tra nếu tin nhắn chào chưa được gửi
+    if (!greetingSent) {
+        msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Em chào anh/chị, em là Alita, chuyên viên tư vấn của theAlita. Anh/chị cho em hỏi tên mình để tiện xưng hô nhé ạ?</div>`; // Nội dung tin nhắn chào
+        msgBox.scrollTop = msgBox.scrollHeight; // Cuộn xuống cuối tin nhắn
+        greetingSent = true; // Đặt cờ là đã gửi
+    }
+    // ----------------------------------------------
   };
 
   document.getElementById('n8n-chat-close').onclick = () => {
     chatContainer.style.display = 'none';
+    // --- Reset cờ khi đóng hộp thoại nếu muốn chào lại mỗi lần mở ---
+    // greetingSent = false; // Bỏ comment dòng này nếu muốn chào lại mỗi lần mở
+    // --- Hoặc xóa hết tin nhắn khi đóng để bắt đầu lại ---
+    document.getElementById('n8n-chat-messages').innerHTML = '';
+    greetingSent = false; // Reset cờ khi xóa tin nhắn
+    // ---------------------------------------------------
   };
 
   document.getElementById('n8n-chat-send').onclick = async function () {
@@ -164,6 +183,7 @@
       msgBox.scrollTop = msgBox.scrollHeight;
     } catch (err) {
       msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Bot: Lỗi kết nối máy chủ</div>`;
+      msgBox.scrollTop = msgBox.scrollHeight; // Scroll even on error
     }
   };
 })();
