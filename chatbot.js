@@ -21,8 +21,8 @@
       position: fixed;
       bottom: 90px;
       right: 24px;
-      width: 360px;
-      max-height: 500px;
+      width: 400px;
+      max-height: 600px;
       display: none;
       flex-direction: column;
       background: #ffffff;
