@@ -3,65 +3,100 @@
   style.innerHTML = `
     #n8n-chat-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #007bff;
+      bottom: 24px;
+      right: 24px;
+      background-color: #4f46e5;
       color: white;
       border: none;
       border-radius: 50%;
       width: 60px;
       height: 60px;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
       z-index: 9999;
+    }
+
+    #n8n-chat-button:hover {
+      transform: scale(1.05);
     }
 
     #n8n-chat-container {
       position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 300px;
-      max-height: 400px;
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      bottom: 100px;
+      right: 24px;
+      width: 340px;
+      max-height: 500px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
       overflow: hidden;
       display: none;
       flex-direction: column;
       z-index: 9999;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     #n8n-chat-messages {
       flex: 1;
       overflow-y: auto;
-      padding: 10px;
-      font-family: sans-serif;
+      padding: 16px;
+      font-family: 'Segoe UI', sans-serif;
       font-size: 14px;
+      background: #f9fafb;
     }
 
-    .n8n-msg { margin: 8px 0; }
-    .n8n-user { color: #007bff; }
-    .n8n-bot { color: #28a745; }
+    .n8n-msg {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+
+    .n8n-user {
+      background-color: #e0e7ff;
+      align-self: flex-end;
+      text-align: right;
+      margin-left: auto;
+    }
+
+    .n8n-bot {
+      background-color: #dcfce7;
+      align-self: flex-start;
+      text-align: left;
+      margin-right: auto;
+    }
 
     #n8n-chat-input-container {
       display: flex;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+      background: white;
     }
 
     #n8n-chat-input {
       flex: 1;
-      border: none;
-      padding: 8px;
-      outline: none;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px 12px;
       font-size: 14px;
+      outline: none;
     }
 
     #n8n-chat-send {
-      background: #007bff;
+      background: #4f46e5;
       color: white;
       border: none;
-      padding: 0 15px;
+      margin-left: 8px;
+      padding: 0 16px;
+      border-radius: 8px;
       cursor: pointer;
     }
   `;
@@ -75,7 +110,7 @@
   const chatContainer = document.createElement('div');
   chatContainer.id = 'n8n-chat-container';
   chatContainer.innerHTML = `
-    <div id="n8n-chat-messages"></div>
+    <div id="n8n-chat-messages" style="display: flex; flex-direction: column;"></div>
     <div id="n8n-chat-input-container">
       <input id="n8n-chat-input" type="text" placeholder="Nhập tin nhắn..." />
       <button id="n8n-chat-send">Gửi</button>
