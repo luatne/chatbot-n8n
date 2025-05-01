@@ -103,6 +103,13 @@
       font-size: 14px;
       outline: none;
     }
+    #n8n-chat-button img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
 
     #n8n-chat-send {
       background: none;
@@ -117,7 +124,7 @@
 
   const chatBtn = document.createElement('button');
   chatBtn.id = 'n8n-chat-button';
-  chatBtn.innerHTML = '<img src="https://chatbot-n8n-mmd6.vercel.app/alitalogo.png" alt="Chat" style="width: 32px; height: 32px;" />';
+  chatBtn.innerHTML = '<img src="https://chatbot-n8n-mmd6.vercel.app/alitalogo.png" alt="Chat" />';
   document.body.appendChild(chatBtn);
 
   const chatContainer = document.createElement('div');
