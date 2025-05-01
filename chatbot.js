@@ -37,7 +37,7 @@
     }
 
     #n8n-chat-header {
-      background: #2563eb;
+      background: #0C0140;
       color: white;
       padding: 12px 16px;
       display: flex;
