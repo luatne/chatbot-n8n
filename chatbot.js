@@ -1,4 +1,3 @@
-<script>
 (function () {
   const style = document.createElement('style');
   style.innerHTML = `
@@ -167,4 +166,3 @@
     }
   };
 })();
-</script>
