@@ -15,6 +15,8 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       z-index: 9999;
+      padding: 0;
+      overflow: hidden; /* Chặn phần dư ngoài hình tròn */
     }
 
     #n8n-chat-container {
