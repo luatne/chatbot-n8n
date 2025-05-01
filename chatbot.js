@@ -117,14 +117,14 @@
 
   const chatBtn = document.createElement('button');
   chatBtn.id = 'n8n-chat-button';
-  chatBtn.textContent = '💬';
+  chatBtn.textContent = '<img src="https://chatbot-n8n-mmd6.vercel.app/alitalogo.png" alt="Chat" style="width: 32px; height: 32px;" />'';
   document.body.appendChild(chatBtn);
 
   const chatContainer = document.createElement('div');
   chatContainer.id = 'n8n-chat-container';
   chatContainer.innerHTML = `
     <div id="n8n-chat-header">
-      <h4>🤖 Chatbot n8n</h4>
+      <h4>Chatbot Alita</h4>
       <button id="n8n-chat-close">×</button>
     </div>
     <div id="n8n-chat-messages"></div>
