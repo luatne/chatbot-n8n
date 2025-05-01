@@ -22,6 +22,7 @@
       bottom: 90px;
       right: 24px;
       width: 400px;
+      height: 500px;
       max-height: 600px;
       display: none;
       flex-direction: column;
