@@ -117,7 +117,7 @@
 
   const chatBtn = document.createElement('button');
   chatBtn.id = 'n8n-chat-button';
-  chatBtn.textContent = '<img src="https://chatbot-n8n-mmd6.vercel.app/alitalogo.png" alt="Chat" style="width: 32px; height: 32px;" />'';
+  chatBtn.innerHTML = '<img src="https://chatbot-n8n-mmd6.vercel.app/alitalogo.png" alt="Chat" style="width: 32px; height: 32px;" />';
   document.body.appendChild(chatBtn);
 
   const chatContainer = document.createElement('div');
