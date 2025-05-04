@@ -16,7 +16,7 @@
       cursor: pointer;
       z-index: 9999;
       padding: 0;
-      overflow: hidden; /* Chặn phần dư ngoài hình tròn */
+      overflow: hidden;
     }
 
     #n8n-chat-container {
@@ -26,7 +26,7 @@
       width: 400px;
       height: 500px;
       max-height: 600px;
-      display: none; /* Changed from none to flex to allow for initial message setup, though it will be set back to none immediately unless opened. Better to keep it 'none' and set to 'flex' in the click handler. Reverting this comment. */
+      display: none;
       flex-direction: column;
       background: #ffffff;
       border-radius: 16px;
@@ -76,7 +76,9 @@
       border-radius: 18px;
       max-width: 75%;
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1.5;
+      white-space: normal;
+      word-wrap: break-word;
     }
 
     .n8n-user {
@@ -105,13 +107,13 @@
       font-size: 14px;
       outline: none;
     }
+
     #n8n-chat-button img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
     }
-
 
     #n8n-chat-send {
       background: none;
@@ -120,6 +122,12 @@
       color: #2563eb;
       margin-left: 8px;
       cursor: pointer;
+    }
+
+    .n8n-msg a {
+      color: #2563eb;
+      text-decoration: underline;
+      word-break: break-all;
     }
   `;
   document.head.appendChild(style);
@@ -144,31 +152,22 @@
   `;
   document.body.appendChild(chatContainer);
 
-  // --- Thêm biến cờ để kiểm tra xem tin nhắn chào đã gửi chưa ---
   let greetingSent = false;
 
   chatBtn.onclick = () => {
     chatContainer.style.display = 'flex';
-
-    // --- Thêm đoạn code gửi tin nhắn chào ở đây ---
     const msgBox = document.getElementById('n8n-chat-messages');
-    // Kiểm tra nếu tin nhắn chào chưa được gửi
     if (!greetingSent) {
-        msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Em chào anh/chị, em là Alita, chuyên viên tư vấn của theAlita. Anh/chị cho em hỏi tên mình để tiện xưng hô nhé ạ?</div>`; // Nội dung tin nhắn chào
-        msgBox.scrollTop = msgBox.scrollHeight; // Cuộn xuống cuối tin nhắn
-        greetingSent = true; // Đặt cờ là đã gửi
+      msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Em chào anh/chị, em là Alita, chuyên viên tư vấn của theAlita. Anh/chị cho em hỏi tên mình để tiện xưng hô nhé ạ?</div>`;
+      msgBox.scrollTop = msgBox.scrollHeight;
+      greetingSent = true;
     }
-    // ----------------------------------------------
   };
 
   document.getElementById('n8n-chat-close').onclick = () => {
     chatContainer.style.display = 'none';
-    // --- Reset cờ khi đóng hộp thoại nếu muốn chào lại mỗi lần mở ---
-    // greetingSent = false; // Bỏ comment dòng này nếu muốn chào lại mỗi lần mở
-    // --- Hoặc xóa hết tin nhắn khi đóng để bắt đầu lại ---
     document.getElementById('n8n-chat-messages').innerHTML = '';
-    greetingSent = false; // Reset cờ khi xóa tin nhắn
-    // ---------------------------------------------------
+    greetingSent = false;
   };
 
   document.getElementById('n8n-chat-send').onclick = async function () {
@@ -188,11 +187,16 @@
         body: JSON.stringify({ message: text })
       });
       const data = await res.json();
-      msgBox.innerHTML += `<div class="n8n-msg n8n-bot">${data.reply}</div>`;
+
+      const formattedReply = data.reply
+        .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')
+        .replace(/\n/g, '<br>');
+
+      msgBox.innerHTML += `<div class="n8n-msg n8n-bot">${formattedReply}</div>`;
       msgBox.scrollTop = msgBox.scrollHeight;
     } catch (err) {
       msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Bot: Lỗi kết nối máy chủ</div>`;
-      msgBox.scrollTop = msgBox.scrollHeight; // Scroll even on error
+      msgBox.scrollTop = msgBox.scrollHeight;
     }
   };
 })();
