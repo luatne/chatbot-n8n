@@ -199,4 +199,11 @@
       msgBox.scrollTop = msgBox.scrollHeight;
     }
   };
+  document.getElementById('n8n-chat-input').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault(); // Ngăn xuống dòng
+    document.getElementById('n8n-chat-send').click(); // Giả lập click nút gửi
+  }
+});
+
 })();
