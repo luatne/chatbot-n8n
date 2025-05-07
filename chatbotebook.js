@@ -174,7 +174,7 @@
     msgBox.scrollTop = msgBox.scrollHeight;
 
     try {
-      const res = await fetch('https://n8n.thuhoai-academy.com/webhook/chatbotebook', {
+      const res = await fetch('https://n8n.thuhoai-academy.com/webhook-test/chatbotebook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })
