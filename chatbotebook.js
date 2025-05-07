@@ -151,7 +151,7 @@
     chatContainer.style.display = 'flex';
     const msgBox = document.getElementById('n8n-chat-messages');
     if (!greetingSent) {
-      msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Xin chào bạn! Mình là trợ lý ảo của Trạm Đọc. Mình có thể hỗ trợ bạn tìm sách, bài viết hoặc trả lời các thắc mắc nhé!</div>`;
+      msgBox.innerHTML += `<div class="n8n-msg n8n-bot">Xin chào bạn! Mình là My tư vấn viên của Trạm Đọc. Mình có thể hỗ trợ bạn tìm sách, bài viết hoặc trả lời các thắc mắc nhé!</div>`;
       msgBox.scrollTop = msgBox.scrollHeight;
       greetingSent = true;
     }
@@ -174,7 +174,7 @@
     msgBox.scrollTop = msgBox.scrollHeight;
 
     try {
-      const res = await fetch('https://n8n.thuhoai-academy.com/webhook/chatbot', {
+      const res = await fetch('https://n8n.thuhoai-academy.com/webhook/chatbotebook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })
