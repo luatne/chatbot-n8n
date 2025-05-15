@@ -144,7 +144,7 @@ style.innerHTML = `
   #n8n-chat-header {
     padding: 32px 20px 24px;
     height: auto;
-    margin-top: 24px;
+    margin-top: 30px;
     box-sizing: border-box;
   }
 
