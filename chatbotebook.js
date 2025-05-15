@@ -122,6 +122,49 @@
       text-decoration: underline;
       word-break: break-word;
     }
+      /* ---- RESPONSIVE CHO MOBILE ---- */
+@media (max-width: 600px) {
+  #n8n-chat-container {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    max-height: none;
+  }
+
+  #n8n-chat-header {
+    padding: 32px 20px 24px;
+    height: auto;
+    margin-top: 30px;
+    box-sizing: border-box;
+  }
+
+  #n8n-chat-header h4 {
+    font-size: 20px;
+  }
+
+  #n8n-chat-header button {
+    font-size: 28px;
+  }
+
+  #n8n-chat-messages {
+    padding: 12px;
+  }
+
+  #n8n-chat-input-container {
+    padding: 8px;
+  }
+
+  #n8n-chat-input {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .n8n-msg {
+    font-size: 15px;
+  }
+}
   `;
   document.head.appendChild(style);
 
