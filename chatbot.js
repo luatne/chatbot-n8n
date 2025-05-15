@@ -141,6 +141,21 @@ style.innerHTML = `
     max-height: none;
   }
 
+  #n8n-chat-header {
+    padding: 32px 20px 24px;
+    height: auto;
+    margin-top: 24px;
+    box-sizing: border-box;
+  }
+
+  #n8n-chat-header h4 {
+    font-size: 20px;
+  }
+
+  #n8n-chat-header button {
+    font-size: 28px;
+  }
+
   #n8n-chat-messages {
     padding: 12px;
   }
@@ -156,19 +171,6 @@ style.innerHTML = `
 
   .n8n-msg {
     font-size: 15px;
-  }
-
-  #n8n-chat-header {
-    padding: 24px 20px;
-    height: 72px;
-  }
-
-  #n8n-chat-header h4 {
-    font-size: 20px;
-  }
-
-  #n8n-chat-header button {
-    font-size: 28px;
   }
 }
 `;
