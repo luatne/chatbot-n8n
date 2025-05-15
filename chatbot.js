@@ -1,167 +1,168 @@
 (function () {
   const style = document.createElement('style');
-  style.innerHTML = `
-    #n8n-chat-button {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      font-size: 24px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      z-index: 9999;
-      padding: 0;
-      overflow: hidden;
-    }
+style.innerHTML = `
+  #n8n-chat-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 9999;
+    padding: 0;
+    overflow: hidden;
+  }
 
-    #n8n-chat-container {
-      position: fixed;
-      bottom: 90px;
-      right: 24px;
-      width: 400px;
-      height: 500px;
-      max-height: 600px;
-      display: none;
-      flex-direction: column;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      overflow: hidden;
-      z-index: 9999;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    #n8n-chat-header {
-      background: #0C0140;
-      color: white;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    #n8n-chat-header h4 {
-      margin: 0;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    #n8n-chat-header button {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    #n8n-chat-messages {
-      flex: 1;
-      padding: 16px;
-      background: #f3f4f6;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .n8n-msg {
-      padding: 10px 14px;
-      border-radius: 18px;
-      max-width: 75%;
-      font-size: 14px;
-      line-height: 1.5;
-      white-space: normal;
-      word-wrap: break-word;
-    }
-
-    .n8n-user {
-      background: #e0e7ff;
-      align-self: flex-end;
-    }
-
-    .n8n-bot {
-      background: #dcfce7;
-      align-self: flex-start;
-    }
-
-    #n8n-chat-input-container {
-      display: flex;
-      padding: 10px;
-      background: white;
-      border-top: 1px solid #ddd;
-      align-items: center;
-    }
-
-    #n8n-chat-input {
-      flex: 1;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      padding: 8px 14px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    #n8n-chat-button img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    #n8n-chat-send {
-      background: none;
-      border: none;
-      font-size: 20px;
-      color: #2563eb;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-    @media (max-width: 600px) {
   #n8n-chat-container {
-    width: 100vw;
-    height: 100vh;
-    bottom: 0;
-    right: 0;
-    border-radius: 0;
-    max-height: none;
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 400px;
+    height: 500px;
+    max-height: 600px;
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    overflow: hidden;
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
   }
 
-  #n8n-chat-messages {
-    padding: 12px;
-  }
-
-  #n8n-chat-input-container {
-    padding: 8px;
-  }
-
-  #n8n-chat-input {
-    font-size: 16px;
-    padding: 10px 16px;
-  }
-
-  .n8n-msg {
-    font-size: 15px;
+  #n8n-chat-header {
+    background: #0C0140;
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   #n8n-chat-header h4 {
-    font-size: 18px;
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-}
 
+  #n8n-chat-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
 
-    .n8n-msg a {
-      color: #2563eb;
-      text-decoration: underline;
-      word-break: break-all;
+  #n8n-chat-messages {
+    flex: 1;
+    padding: 16px;
+    background: #f3f4f6;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .n8n-msg {
+    padding: 10px 14px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .n8n-user {
+    background: #e0e7ff;
+    align-self: flex-end;
+  }
+
+  .n8n-bot {
+    background: #dcfce7;
+    align-self: flex-start;
+  }
+
+  #n8n-chat-input-container {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+    align-items: center;
+  }
+
+  #n8n-chat-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  #n8n-chat-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  #n8n-chat-send {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #2563eb;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+
+  .n8n-msg a {
+    color: #2563eb;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+
+  /* ---- RESPONSIVE CHO MOBILE ---- */
+  @media (max-width: 600px) {
+    #n8n-chat-container {
+      width: 100vw;
+      height: 100vh;
+      bottom: 0;
+      right: 0;
+      border-radius: 0;
+      max-height: none;
     }
-  `;
+
+    #n8n-chat-messages {
+      padding: 12px;
+    }
+
+    #n8n-chat-input-container {
+      padding: 8px;
+    }
+
+    #n8n-chat-input {
+      font-size: 16px;
+      padding: 10px 16px;
+    }
+
+    .n8n-msg {
+      font-size: 15px;
+    }
+
+    #n8n-chat-header h4 {
+      font-size: 18px;
+    }
+  }
+`;
   document.head.appendChild(style);
 
   const chatBtn = document.createElement('button');
