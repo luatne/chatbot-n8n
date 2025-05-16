@@ -225,7 +225,7 @@ style.innerHTML = `
     msgBox.scrollTop = msgBox.scrollHeight;
 
     try {
-      const res = await fetch('https://n8n.thuhoai-academy.com/webhook/chatbot', {
+      const res = await fetch('https://n8n.datalytis.com/webhook/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })
