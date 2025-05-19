@@ -301,9 +301,9 @@ style.innerHTML = `
     </div>
     <div id="n8n-chat-messages"></div>
     <div id="n8n-suggest-buttons">
-      <button class="n8n-suggest">🧠 Thông tin vài cuốn sách về 1 lĩnh vực</button>
-      <button class="n8n-suggest">💰 Thông tin chi tiết về giá của sách</button>
-      <button class="n8n-suggest">🎯 Tìm kiếm sách phù hợp</button>
+      <button class="n8n-suggest">📚 Danh sách các đầu sách mới</button>
+      <button class="n8n-suggest">💵 Thông tin chi tiết về giá của sách</button>
+      <button class="n8n-suggest">🔥 Danh sách các đầu sách khuyến mãi mạnh</button>
     </div>
     <div id="n8n-chat-input-container">
       <span id="n8n-input-menu">☰</span>
