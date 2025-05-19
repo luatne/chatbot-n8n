@@ -38,7 +38,8 @@ style.innerHTML = `
 
   #n8n-chat-header {
     color: white;
-    background: linear-gradient(135deg, #1E006A, #2FAEDC);
+    background: linear-gradient(135deg, #2A3A80, #3EC0F2);
+
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     padding: 12px 16px;
     display: flex;
