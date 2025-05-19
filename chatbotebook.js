@@ -303,7 +303,7 @@ style.innerHTML = `
     <div id="n8n-suggest-buttons">
       <button class="n8n-suggest">📚 Thông tin danh sách các đầu sách mới</button>
       <button class="n8n-suggest">💵 Thông tin chi tiết về giá của sách</button>
-      <button class="n8n-suggest">🔥 Thông tin Danh sách các đầu sách khuyến mãi mạnh</button>
+      <button class="n8n-suggest">🔥 Thông tin Danh sách các đầu sách khuyến mãi</button>
     </div>
     <div id="n8n-chat-input-container">
       <span id="n8n-input-menu">☰</span>
