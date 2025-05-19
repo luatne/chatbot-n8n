@@ -293,7 +293,7 @@ style.innerHTML = `
   chatContainer.innerHTML = `
     <div id="n8n-chat-header">
       <h4>
-        <img src="https://chatbot-test-teal-ten.vercel.app/096130.jpg" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;" />
+        <img src="https://chatbot-test-teal-ten.vercel.app/091778.jpg" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;" />
         <span style="color: white;">Khả Như từ Tramdoc</span>
       </h4>
       <button id="n8n-chat-close">×</button>
@@ -326,7 +326,7 @@ style.innerHTML = `
     chatContainer.style.display = 'flex';
     const msgBox = document.getElementById('n8n-chat-messages');
     if (!greetingSent) {
-  createBotMessage(`Em là Sena – chuyên viên tư vấn Alita. Anh/chị cần hỗ trợ nội dung nào, có thể chọn nhanh bên dưới ạ.`);
+  createBotMessage(`Em là Khả Như – chuyên viên tư vấn Trạm Đọc. Anh/chị cần hỗ trợ nội dung nào, có thể chọn nhanh bên dưới ạ.`);
   msgBox.scrollTop = msgBox.scrollHeight;
   greetingSent = true;
 }
@@ -391,7 +391,7 @@ function createBotMessage(text) {
   msg.className = "msg bot";
 
   const avatar = document.createElement("img");
-  avatar.src = "https://chatbot-test-teal-ten.vercel.app/096130.jpg"; // thay bằng link icon thật
+  avatar.src = "https://chatbot-test-teal-ten.vercel.app/091778.jpg"; // thay bằng link icon thật
   avatar.className = "avatar";
 
   const bubble = document.createElement("div");
