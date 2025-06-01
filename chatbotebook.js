@@ -319,7 +319,7 @@ style.innerHTML = `
     </div>
   `;
   document.body.appendChild(chatContainer);
-
+ setupSuggestButtons();
   // Encode & format text (chuyển link, xuống dòng)
   function formatText(text) {
     const escaped = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -350,6 +350,16 @@ style.innerHTML = `
     const data = await res.json();
     return data.ip;
   }
+function setupSuggestButtons() {
+  const suggestButtons = document.querySelectorAll('.n8n-suggest');
+  suggestButtons.forEach(btn => {
+    btn.onclick = () => {
+      const input = document.getElementById('n8n-chat-input');
+      input.value = btn.textContent.trim();
+      document.getElementById('n8n-chat-send').click();
+    };
+  });
+}
 
   // Load lịch sử chat
 async function loadChatHistory(userId) {
