@@ -368,8 +368,8 @@ async function loadChatHistory(userId) {
       `https://csgfylapdqpygbukgwgr.supabase.co/rest/v1/n8n_chat_histories_ebook?session_id=eq.${encodeURIComponent(userId)}&order=id.asc`,
       {
         headers: {
-          apikey: 'your_api_key',
-          Authorization: 'your_bearer_token'
+          apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzZ2Z5bGFwZHFweWdidWtnd2dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4ODIyODAsImV4cCI6MjA2MjQ1ODI4MH0.9SvU1hMAUWPthkv1LEdbvC51KnUZ5GlT-3AwDcrtgng',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzZ2Z5bGFwZHFweWdidWtnd2dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4ODIyODAsImV4cCI6MjA2MjQ1ODI4MH0.9SvU1hMAUWPthkv1LEdbvC51KnUZ5GlT-3AwDcrtgng'
         }
       }
     );
