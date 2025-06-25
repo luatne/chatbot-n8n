@@ -143,7 +143,7 @@ style.innerHTML = `
 @media (max-width: 600px) {
   #n8n-chat-container {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     bottom: 0;
     right: 0;
     border-radius: 0;
