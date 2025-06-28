@@ -456,7 +456,7 @@ async function loadChatHistory(userId) {
     msgBox.scrollTop = msgBox.scrollHeight;
 
     try {
-      const res = await fetch('https://n8n.thuhoai-academy.com/webhook/chatbotebook_haravan', {
+      const res = await fetch('https://alita.htsvietnam.com/webhook/chatbotebook_haravan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text }),
